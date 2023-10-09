@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Project NeLL</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+</head>
+
+<body>
+    <header class="d-flex align-items-center p-3">
+        <img src="emory-shield-white.png" width="30" height="30" class="initial-scale" alt="">
+        <h3 class="mb-1 justify-content-end"><strong>Project NeLL</strong></h3>
+        <nav id="main-nav" class="d-flex justify-content-around flex-grow-2">
+            
+            <a class="navbar-brand" href="#"></a>
+            <a href="#">Data Dictionary</a>
+            <a href="#">anything else?</a>
+            <a href="#">What about me?</a>
+        </nav>
+
+    </header>
+
+    <main class="container mt-4">
+      
+      
+
+        <section class="mb-5">
+            <h2><strong>Introducing Your Data Dictionary: <span style="color:rgb(39, 118, 255)">Project NeLL</span></strong></h2><br>
+            <p>Welcome to <strong><span style="color:rgb(39, 118, 255)">Project NeLL</span></strong>, the nexus of healthcare and big data. With Project Nell, you'll navigate through millions of patient records and 14 billion individual data entries, offering an unparalleled depth in healthcare analytics.<br><br>
+        
+            "Big data" encompasses extremely large datasets that can be computationally analysed to expose patterns, trends, and associations. In the realm of healthcare, big data provides critical insights driving improved patient outcomes and groundbreaking research.</p>
+        
+            <p>At the heart of Project NeLL is our <strong>data dictionary</strong> - 12 distinct tables each overflowing with fields representing a plethora of specific healthcare and patient data.
+        </section>
+        
+
+        <section>
+            <h2>Interactive Table</h2>
+            <p>Click on a row to view for details</p>
+            <table id='main-table' class="table">
+                <thead>
+                  <tr>
+                    <th scope="col">Table Name</th>
+                    <th scope="col"># of Fields</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>Administered & Prescribed Medications</td>
+                    <td><span class="badge badge-pill badge-primary">28</span></td>
+                  </tr>
+                  <tr>
+                    <td>Clinical Encounters</td>
+                    <td><span class="badge badge-pill badge-primary">14</span></td>
+                  </tr>
+                  <tr>
+                    <td>CPT</td>
+                    <td><span class="badge badge-pill badge-primary">14</span></td>
+                  </tr>
+                  <tr>
+                    <td>Diagnosis</td>
+                    <td><span class="badge badge-pill badge-primary">12</span></td>
+                  </tr>
+                  <tr>
+                    <td>Encounter Basics</td>
+                    <td><span class="badge badge-pill badge-primary">7</span></td>
+                  </tr>
+                  <tr>
+                    <td>Hospital Encounters</td>
+                    <td><span class="badge badge-pill badge-primary">26</span></td>
+                  </tr>
+                  <tr>
+                    <td>Labs</td>
+                    <td><span class="badge badge-pill badge-primary">18</span></td>
+                  </tr>
+                  <tr>
+                    <td>Micro Susceptibility Labs</td>
+                    <td><span class="badge badge-pill badge-primary">13</span></td>
+                  </tr>
+                  <tr>
+                    <td>Microbiology Labs</td>
+                    <td><span class="badge badge-pill badge-primary">14</span></td>
+                  </tr>
+                  <tr>
+                    <td>Orders</td>
+                    <td><span class="badge badge-pill badge-primary">13</span></td>
+                  </tr>
+                  <tr>
+                    <td>Pt Demographics</td>
+                    <td><span class="badge badge-pill badge-primary">13</span></td>
+                  </tr>
+                  <tr>
+                    <td>Surgeries/Anesthesia</td>
+                    <td><span class="badge badge-pill badge-primary">26</span></td>
+                  </tr>
+                </tbody>
+              </table>
+              
+
+            <h3 id="row-description" class="mt-4" style="display: none;"></h3>
+            <p id="table-description" class="mt-3" style="display: none;"></p>
+            <table id="details-table" class="table table-bordered mt-4" style="display: none;">
+                <thead>
+                    <tr>
+                        <th scope="col">Field Name</th>
+                        <th scope="col">Description</th>
+                        <th scope="col">Example</th>
+                    </tr>
+                </thead>
+                <tbody>
+                </tbody>
+            </table>
+        </section>
+    </main>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.3.0/papaparse.min.js"></script>
+    <script>
+      $(document).ready(function() {
+          let tableData = {};
+          let tableDescriptions = {};
+
+          // Fetch table descriptions from the JSON file
+          $.getJSON('table_descriptions.json', function(data) {
+              tableDescriptions = data;
+          }).fail(function(){
+              console.error("Error fetching table descriptions.");
+          });
+
+          // Load and parse the CSV
+          Papa.parse('nell_data_dictionary.csv', {
+              download: true,
+              header: true,
+              complete: function(results) {
+                  results.data.forEach(row => {
+                      if (!tableData[row.name]) {
+                          tableData[row.name] = [];
+                      }
+                      tableData[row.name].push(row);
+                  });
+  
+                  // Attach click event after data loading
+                  $('#main-table tbody tr').on('click', function() {
+                      const name = $(this).children('td:nth-child(1)').text().trim(); 
+                      const dataRows = tableData[name];
+                      
+                      if (dataRows && dataRows.length > 0) {
+                          let html = '';
+                          
+                          dataRows.forEach(row => {
+                              html += `
+                                  <tr>
+                                      <td>${row.fieldName}</td>
+                                      <td>${row.description}</td>
+                                      <td>${row.example}</td>
+                                  </tr>
+                              `;
+                          });
+  
+                          $('#details-table tbody').html(html);
+                          $('#row-description').show().text('Table fields for ' + name);
+                          $('#details-table').show(); 
+                      }
+
+                      // Display the description
+                      let description = tableDescriptions[name] || "No description available";
+                      $('#table-description').text(description).show(); 
+
+                      // Remove 'selected-row' class from all rows and add it to the clicked one
+                      $('#main-table tbody tr').removeClass('selected-row');
+                      $(this).addClass('selected-row');
+                  });
+  
+                  // Auto-select the first row on page load
+                  $('#main-table tbody tr:first').click();
+              }
+          });
+      });
+  </script>
+</body>
+
+</html>
+
+

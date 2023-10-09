@@ -1,0 +1,75 @@
+{
+    "Medication": {
+        "table_description":"This table captures comprehensive information about medications that are either prescribed or administered to patients in various healthcare settings. It integrates records from electronic health records (eHR) to provide specifics on the medication itself, the context in which it's given, its dosage, frequency, and related administrative details. Each entry includes pertinent details like the type of medication, its route of administration, the performing healthcare professional's credentials, and any related timestamps. This table is essential for ensuring patient safety, understanding medication-related clinical decisions, and auditing medication orders and administrations.",
+        "EncounterID": {
+            "description": "A number that uniquely identifies a visit to a healthcare facility.",
+            "data_type": "Text",
+            "values": []
+        },
+        "PatientID": {
+            "description": "An ID associated with a patient. All Patient_IDs have been anonymized.",
+            "data_type": "Text",
+            "values": []
+        },
+        "Dosage": {
+            "description": "The dosage ordered, dispensed or administered on an eHR medication order; also dosage for prescribed mediations. Applies to inpatient medications written through a healthcare facility, as well as prescribed outpatient/clinical encounters.",
+            "data_type": "Text",
+            "values": []
+        },
+        "DosageUnitCode": {
+            "description": "(Unit measure dosage) The unit measure specified for the dosage of a medication ordered in the eHR.",
+            "data_type": "Text",
+            "values": []
+        },
+        "Frequency": {
+            "description": "The interval for which a medication is to be administered, as ordered in the eHR. Sample values: As needed, q12hr",
+            "data_type": "Text",
+            "values": []
+        },
+        "IsAdmin": {
+            "description": "An Indicator as to whether the record is an administered medication or a prescribed medication. 1 indicates administered and 0 indicates prescribed.",
+            "data_type": "Boolean",
+            "values": []
+        },
+        "LocationType": {
+            "description": "Type of location where the procedure was rendered.",
+            "data_type": "Text",
+            "values": []
+        },
+        "MedCode": {
+            "description": "???",
+            "data_type": "Text",
+            "values": []
+        },
+        "MedCount": {
+            "description": "???",
+            "data_type": "Number",
+            "values": []
+        },
+        "Medication": {
+            "description": "???",
+            "data_type": "Text",
+            "values": []
+        },
+        "PRNOrderYN": {
+            "description": "An indication of whether an order is a PRN order.",
+            "data_type": "Boolean",
+            "values": []
+        },
+        "RouteMed": {
+            "description": "The route ordered for a given administered medication.",
+            "data_type": "Text",
+            "values": []
+        },
+        "TherapeuticLevel": {
+            "description": "????",
+            "data_type": "Text",
+            "values": []
+        },
+        "Year": {
+            "description": "Date/time that the result was finalized.",
+            "data_type": "Text",
+            "values": []
+        }
+    }
+}

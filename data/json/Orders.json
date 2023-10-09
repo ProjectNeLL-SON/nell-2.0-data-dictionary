@@ -1,0 +1,65 @@
+{
+    "Orders": {
+        "table_description":"The Orders table contains comprehensive data about clinical tasks that are directed by healthcare professionals in a clinical setting. This table ensures that every medical instruction, whether for medications, lab tests, radiology exams, or any other clinical activity, is meticulously documented. Such detailed data helps in understanding the clinical journey of patients, ensuring their safety, and analyzing patterns in medical practices.",
+        "EncounterID": {
+            "description": "A number that uniquely identifies a visit to a healthcare facility.",
+            "data_type": "Text",
+            "values": []
+        },
+        "PatientID": {
+            "description": "An ID associated with a patient. All Patient_IDs have been anonymized.",
+            "data_type": "Text",
+            "values": []
+        },
+        "ClinicCategory": {
+            "description": "The clinically relevant grouping of an ordered item.",
+            "data_type": "Text",
+            "values": []
+        },
+        "LocationType": {
+            "description": "Type of location where the procedure was rendered.",
+            "data_type": "Text",
+            "values": []
+        },
+        "Order": {
+            "description": "!NEED DESCRIPTION",
+            "data_type": "Text",
+            "values": []
+        },
+        "OrderCode": {
+            "description": "!NEED DESCRIPTION",
+            "data_type": "Text",
+            "values": []
+        },
+        "OrderItemType": {
+            "description": "A general classification of an eHR orderable. NOTE: Items with a \"zz..\" prefix are no longer used.",
+            "data_type": "Text",
+            "values": []
+        },
+        "OrderStatus": {
+            "description": "The current progress of a clinical order.",
+            "data_type": "Text",
+            "values": []
+        },
+        "OrderTS": {
+            "description": "Date/time that a clinical order was issued.",
+            "data_type": "Text",
+            "values": []
+        },
+        "PRNIndYN": {
+            "description": "An indication of an eHR order as PRN (as needed).",
+            "data_type": "Text",
+            "values": []
+        },
+        "SpecialtyPrimary": {
+            "description": "The primary credentialed specialty of a primary care physician. Source: Cactus, via eHR.",
+            "data_type": "Text",
+            "values": []
+        },
+        "Year": {
+            "description": "Year the service was rendered (shifted up to 365 days to maintain the anonymity of the patient).",
+            "data_type": "Text",
+            "values": []
+        }
+    }
+}

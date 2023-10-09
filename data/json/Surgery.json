@@ -1,0 +1,145 @@
+{
+    "Surgery": {
+        "table_description":"The Surgeries/Anesthesia table is a comprehensive record that provides a detailed overview of the surgical and anesthesia procedures undergone by patients. This information plays a significant role in understanding the surgical process, from the setup of the operating room to the cleanup, the surgical and anesthesia personnel involved, and the specifics of the anesthesia process. The meticulous documentation assists in the analysis of surgery durations, patient care under anesthesia, and ensures the highest standards of surgical and anesthesia practices.",
+        "EncounterID": {
+            "description": "A number that uniquely identifies a visit to a healthcare facility.",
+            "data_type": "Text",
+            "values": []
+        },
+        "PatientID": {
+            "description": "An ID associated with a patient. All Patient_IDs have been anonymized.",
+            "data_type": "Text",
+            "values": []
+        },
+        "AnesDocType": {
+            "description": "The document type in which the intraoperative anesthesia data for the case was recorded. Useful for distinguishing cath lab cases from other anesthesia cases, and for distinguishing cases staffed by hospital-associated physicians.",
+            "data_type": "Text",
+            "values": []
+        },
+        "AnesGroupType": {
+            "description": "All anesthesia types used in the case listed in a single record.",
+            "data_type": "Text",
+            "values": []
+        },
+        "AnesPrimaryCredential": {
+            "description": "Primary Anesthesiologist's credential.",
+            "data_type": "Text",
+            "values": []
+        },
+        "AnesType": {
+            "description": "Type of anesthesia administered during the case.",
+            "data_type": "Text",
+            "values": []
+        },
+        "AntibioticGivenYN": {
+            "description": "The indication of whether antibiotics were given according to anesthesia personnel. A Yes does not necessarily mean that antibiotics were given in compliance with SCIP (within 60 minutes of the start of the procedure).",
+            "data_type": "Text",
+            "values": []
+        },
+        "ASAClass": {
+            "description": "ASA physical status classification system.",
+            "data_type": "Text",
+            "values": []
+        },
+        "LocationType": {
+            "description": "Type of location where the procedure was rendered.",
+            "data_type": "Text",
+            "values": []
+        },
+        "PatientInRoomTS": {
+            "description": "Date/time that the patient entered the operating room for the surgical case.",
+            "data_type": "Text",
+            "values": []
+        },
+        "PatientOutRoomTS": {
+            "description": "Date/time that the patient exited the operating room.",
+            "data_type": "Text",
+            "values": []
+        },
+        "PreOpICD10Code": {
+            "description": "ICD10 diagnosis requiring surgery.",
+            "data_type": "Text",
+            "values": []
+        },
+        "PreOpICD10Desc": {
+            "description": "",
+            "data_type": "Text",
+            "values": []
+        },
+        "PreOpICD9Code": {
+            "description": "ICD9 diagnosis requiring surgery.",
+            "data_type": "Text",
+            "values": []
+        },
+        "PreOpICD9Desc": {
+            "description": "",
+            "data_type": "Text",
+            "values": []
+        },
+        "PrimaryProcedure": {
+            "description": "The primary procedure performed during the surgical case.",
+            "data_type": "Text",
+            "values": []
+        },
+        "PrimarySpecialty": {
+            "description": "The primary practice specialty assigned to an ordering provider by the institutional credentialing office.",
+            "data_type": "Text",
+            "values": []
+        },
+        "PtInRoomDuration_min": {
+            "description": "Total minutes the patient was in the operating room.",
+            "data_type": "Text",
+            "values": []
+        },
+        "RevenueSpecialty": {
+            "description": "The primary specialty assigned to a billing provider by Finance. Usually, this is a rollup of the practice specialty assigned by the Credentialing Office. Source: EeMR Revenue Specialty.",
+            "data_type": "Text",
+            "values": []
+        },
+        "ServiceSection": {
+            "description": "The location of the case down to the operating room.",
+            "data_type": "Text",
+            "values": []
+        },
+        "SurgDuration_min": {
+            "description": "Total minutes the patient was in surgery.",
+            "data_type": "Text",
+            "values": []
+        },
+        "SurgeryStartTS": {
+            "description": "Date/time that the surgery began.",
+            "data_type": "Text",
+            "values": []
+        },
+        "SurgeryStopTS": {
+            "description": "Date/time that the surgery ended.",
+            "data_type": "Text",
+            "values": []
+        },
+        "SurgicalSpecialty": {
+            "description": "The surgical specialty associated with the case.",
+            "data_type": "Text",
+            "values": []
+        },
+        "SurgPersonnelRole": {
+            "description": "The role each person played in the case.",
+            "data_type": "Text",
+            "values": []
+        },
+        "SurgPrimaryCredential": {
+            "description": "Primary surgeon's credential.",
+            "data_type": "Text",
+            "values": []
+        },
+        "WoundClass": {
+            "description": "Is this ASA_Class?",
+            "data_type": "Text",
+            "values": []
+        },
+        "Year": {
+            "description": "Year the service was rendered (shifted up to 365 days to maintain the anonymity of the patient).",
+            "data_type": "Text",
+            "values": []
+        }
+    }
+}

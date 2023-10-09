@@ -1,0 +1,70 @@
+{
+    "Microbiology": {
+        "table_description":"The Microbiology Labs table encompasses crucial details about tests executed in a microbiology laboratory. These tests aim to detect, identify, and characterize microorganisms present in collected specimens, which might be indicative of infections. The data contained within not only reflects the clinical specifics of the tests and their results but also highlights the context surrounding patient encounters, specimen collection, and eventual interpretation of results.",
+        "EncounterID": {
+            "description": "A number that uniquely identifies a visit to a healthcare facility.",
+            "data_type": "Text",
+            "values": []
+        },
+        "PatientID": {
+            "description": "An ID associated with a patient. All Patient_IDs have been anonymized.",
+            "data_type": "Text",
+            "values": []
+        },
+        "LabPatientType": {
+            "description": "A classification of the type of encounter associated with a lab test.",
+            "data_type": "Text",
+            "values": []
+        },
+        "MedicalSite": {
+            "description": "A body site or piece of medical equipment from which a specimen is collected.",
+            "data_type": "Text",
+            "values": []
+        },
+        "SpecimenType": {
+            "description": "A classification of a collected specimen, such as blood or urine.",
+            "data_type": "Text",
+            "values": []
+        },
+        "ResultInterpretation": {
+            "description": "A high-level description of a given result.",
+            "data_type": "Text",
+            "values": []
+        },
+        "Assay": {
+            "description": "The test - or panel of tests - ordered. This is the equivalent of the eHR order_catalog.",
+            "data_type": "Text",
+            "values": []
+        },
+        "PositiveCultureYN": {
+            "description": "A designation of a microbiology lab result as positive or negative.",
+            "data_type": "Text",
+            "values": []
+        },
+        "Organism": {
+            "description": "A microorganism that may be detected in a microbiology lab culture.",
+            "data_type": "Text",
+            "values": []
+        },
+        "SpecimenCollectTS": {
+            "description": "Date/time that a lab specimen was collected.",
+            "data_type": "Text",
+            "values": []
+        },
+        "SpecimenReceiveTS": {
+            "description": "Date/time that a lab specimen was received.",
+            "data_type": "Text",
+            "values": []
+        },
+        "ResultVerifyTS": {
+            "description": "Date/time that the result was finalized.",
+            "data_type": "Text",
+            "values": []
+        },
+        "Year": {
+            "description": "Year the service was rendered (shifted up to 365 days to maintain the anonymity of the patient).",
+            "data_type": "Text",
+            "values": []
+        }
+    }
+}

@@ -1,0 +1,85 @@
+{
+    "Labs": {
+        "table_description":"The Labs table encompasses crucial details associated with laboratory tests and results during a patient's encounter in a healthcare facility. This table captures both the administrative and clinical aspects of laboratory testing, from specimen collection to test results verification. It aids healthcare professionals in making informed decisions based on the patient's lab results, ensuring accurate and effective treatment.",
+        "EncounterID": {
+            "description": "A number that uniquely identifies a visit to a healthcare facility.",
+            "data_type": "Text",
+            "values": []
+        },
+        "PatientID": {
+            "description": "An ID associated with a patient. All Patient_IDs have been anonymized.",
+            "data_type": "Text",
+            "values": []
+        },
+        "DataType": {
+            "description": "A general classification of a discrete clinical result. It helps identify the type of result being reported. Often, it describes the database data type of a value.",
+            "data_type": "Text",
+            "values": []
+        },
+        "LabResult": {
+            "description": "The discrete result of a lab test.",
+            "data_type": "Text",
+            "values": []
+        },
+        "LabResultSequence": {
+            "description": "An identifier that uniquely identifies a lab record (primary key). These are in order by sequence of events for a particular encounter.",
+            "data_type": "Text",
+            "values": []
+        },
+        "LocationType": {
+            "description": "Type of location where the procedure was rendered.",
+            "data_type": "Text",
+            "values": []
+        },
+        "LOINCDesc": {
+            "description": "Logical Observation Identifiers Names and Codes.",
+            "data_type": "Text",
+            "values": []
+        },
+        "PerformingCredential": {
+            "description": "The primary credential or medical degree of a provider performing a clinical event.",
+            "data_type": "Text",
+            "values": []
+        },
+        "ResultUnit": {
+            "description": "Units of measurement for the result.",
+            "data_type": "Text",
+            "values": []
+        },
+        "ResultVerifyTS": {
+            "description": "Date/time that the result was finalized.",
+            "data_type": "Text",
+            "values": []
+        },
+        "SpecimenCollectTS": {
+            "description": "Date/time that a lab specimen was collected.",
+            "data_type": "Text",
+            "values": []
+        },
+        "SpecimenReceiveTS": {
+            "description": "Date/time that a lab specimen is collected",
+            "data_type": "Text",
+            "values": []
+        },
+        "SpecimenType": {
+            "description": "A classification of a collected specimen.",
+            "data_type": "Text",
+            "values": []
+        },
+        "StructuredResultType": {
+            "description": "The type of lab assay that was run.",
+            "data_type": "Text",
+            "values": []
+        },
+        "VerifyingCredential": {
+            "description": "The credential of the person signing off on the lab result. (not present in many records)",
+            "data_type": "Text",
+            "values": []
+        },
+        "Year": {
+            "description": "Year the service was rendered (shifted up to 365 days to maintain the anonymity of the patient).",
+            "data_type": "Text",
+            "values": []
+        }
+    }
+}

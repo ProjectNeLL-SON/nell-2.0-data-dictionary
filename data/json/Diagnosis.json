@@ -1,0 +1,65 @@
+{
+    "Diagnosis": {
+        "table_description":"The Diagnosis table forms the cornerstone of clinical documentation, cataloging the health conditions and diseases identified during patient encounters. By systematically documenting both ICD-9 and ICD-10 codes, this table facilitates continuity of care, aids in medical billing, and ensures standardized tracking of diseases and health conditions. Additionally, the table provides crucial insights into the context, location, and ranking of each diagnosis, making it instrumental for holistic patient care, research, and healthcare analytics.",
+        "EncounterID": {
+            "description": "A number that uniquely identifies a visit to a healthcare facility.",
+            "data_type": "Text",
+            "values": []
+        },
+        "PatientID": {
+            "description": "An ID associated with a patient. All Patient_IDs have been anonymized.",
+            "data_type": "Text",
+            "values": []
+        },
+        "DiagnosisEventSequence": {
+            "description": "The sequence that diagnoses are made; Unique identifier for a record.",
+            "data_type": "Text",
+            "values": []
+        },
+        "DiagnosisRanking": {
+            "description": "An indication of whether a diagnosis was considered primary or secondary. NOTE: 1. each source system of diagnosis may have its own determination of primary or secondary 2. This is only found for Billing Diagnosis records.",
+            "data_type": "Text",
+            "values": []
+        },
+        "DiagnosisScope": {
+            "description": "The context in which a diagnosis was attached to an event or encounter. Usually, an indication of the type of system that posted the diagnosis.",
+            "data_type": "Text",
+            "values": []
+        },
+        "ICD10Code": {
+            "description": "An ICD-10 diagnosis that justifies or results from a given encounter or clinical event.",
+            "data_type": "Text",
+            "values": []
+        },
+        "ICD10Desc": {
+            "description": "Cant find description",
+            "data_type": "Text",
+            "values": []
+        },
+        "ICD9Code": {
+            "description": "An ICD-9 diagnosis that justifies or results from a given encounter or clinical event.",
+            "data_type": "Text",
+            "values": []
+        },
+        "ICD9Desc": {
+            "description": "Cant find description",
+            "data_type": "Text",
+            "values": []
+        },
+        "LocationType": {
+            "description": "Type of location where the procedure was rendered.",
+            "data_type": "Text",
+            "values": []
+        },
+        "ServiceTimeStamp": {
+            "description": "The day service was rendered at a healthcare facility. Has these purposes: 1. The day of service posted to any billing transaction. 2. The day of a clinical event captured in an eHR. 3. The census day in hospital census reporting. 4. The day a scheduling transaction is logged.",
+            "data_type": "Text",
+            "values": []
+        },
+        "Year": {
+            "description": "Year the service was rendered (shifted up to 365 days to maintain the anonymity of the patient).",
+            "data_type": "Text",
+            "values": []
+        }
+    }
+}

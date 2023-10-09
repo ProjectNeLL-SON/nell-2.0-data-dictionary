@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Project NeLL</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles/styles.css">
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+</head>
+
+<body>
+    <header class="d-flex align-items-center p-3">
+        <img src="styles/emory-shield-white.png" width="30" height="30" class="initial-scale" alt="">
+        <h3 class="mb-1 justify-content-end"><strong>Project NeLL</strong></h3>
+        <nav id="main-nav" class="d-flex justify-content-around flex-grow-2">
+            
+            <a class="navbar-brand" href="#"></a>
+            <a href="#">Data Dictionary</a>
+            <a href="#">anything else?</a>
+            <a href="#">What about me?</a>
+        </nav>
+
+    </header>
+
+    <main class="container mt-4">
+      
+      
+
+        <section class="mb-5">
+            <h2><strong>Introducing Your Data Dictionary: <span style="color:rgb(39, 118, 255)">Project NeLL</span></strong></h2><br>
+            <p>Welcome to <strong><span style="color:rgb(39, 118, 255)">Project NeLL</span></strong>, the nexus of healthcare and big data. With Project Nell, you'll navigate through millions of patient records and 14 billion individual data entries, offering an unparalleled depth in healthcare analytics.<br><br>
+        
+            "Big data" encompasses extremely large datasets that can be computationally analysed to expose patterns, trends, and associations. In the realm of healthcare, big data provides critical insights driving improved patient outcomes and groundbreaking research.</p>
+        
+            <p>At the heart of Project NeLL is our <strong>data dictionary</strong> - 11 distinct tables each overflowing with fields representing a plethora of specific healthcare and patient data.
+        </section>
+        
+        <section>
+            <h2>Interactive Table</h2>
+            <input type="text" id="search-input" placeholder="Search..." class="form-control mb-3">
+            <p>Click on a row to view for details</p>
+            <table id='main-table' class="table">
+                <thead>
+                    <tr>
+                        <th scope="col">Table Name</th>
+                        <th scope="col"># of Fields</th>
+                    </tr>
+                </thead>
+                <tbody>
+
+                    <tr>
+                        <td>Clinical Encounters</td>
+                        <td><span class="badge badge-pill badge-primary">12</span></td>
+                    </tr>
+                    <tr>
+                        <td>Demographics</td>
+                        <td><span class="badge badge-pill badge-primary">15</span></td>
+                    </tr>
+                    <tr>
+                        <td>Diagnosis</td>
+                        <td><span class="badge badge-pill badge-primary">12</span></td>
+                    </tr>
+                    <tr>
+                        <td>Hospital Encounter</td>
+                        <td><span class="badge badge-pill badge-primary">26</span></td>
+                    </tr>
+                    <tr>
+                        <td>Labs</td>
+                        <td><span class="badge badge-pill badge-primary">16</span></td>
+                    </tr>
+                    <tr>
+                        <td>Medication</td>
+                        <td><span class="badge badge-pill badge-primary">14</span></td>
+                    </tr>
+                    <tr>
+                        <td>Microbiology</td>
+                        <td><span class="badge badge-pill badge-primary">13</span></td>
+                    </tr>
+                    <tr>
+                        <td>Orders</td>
+                        <td><span class="badge badge-pill badge-primary">12</span></td>
+                    </tr>
+                    <tr>
+                        <td>Procedures</td>
+                        <td><span class="badge badge-pill badge-primary">11</span></td>
+                    </tr>
+                    <tr>
+                        <td>Surgery</td>
+                        <td><span class="badge badge-pill badge-primary">28</span></td>
+                    </tr>
+                    <tr>
+                        <td>Susceptibility</td>
+                        <td><span class="badge badge-pill badge-primary">13</span></td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <h3 id="row-description" class="mt-4" style="display: none;"></h3>
+            <p id="table-description" class="mt-3" style="display: none;"></p>
+            <table id="details-table" class="table table-bordered mt-4" style="display: none;">
+                <thead>
+                    <tr>
+                        <th scope="col">Field Name</th>
+                        <th scope="col">Description</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Placeholder for JavaScript populated rows -->
+                </tbody>
+            </table>
+            
+        </section>
+    </main>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.3.0/papaparse.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            let jsonData = {};
+    
+            $.getJSON('data/data.json', function(data) {
+                jsonData = data;
+    
+                // Event when a row is clicked
+                $('#main-table tbody tr').on('click', function() {
+                    $('#main-table tbody tr').removeClass('selected-row');  // Remove the class from all rows
+                    $(this).addClass('selected-row');  // Add the class to the clicked row
+                    
+                    const name = $(this).children('td:nth-child(1)').text().trim();
+                    const searchVal = $('#search-input').val().toLowerCase();
+                    displayTableFields(name, searchVal);
+                });
+    
+                // Automatically select the first row on page load
+                $('#main-table tbody tr:first').show().click();
+                $('#main-table tbody tr:first').addClass('selected-row');
+    
+            }).fail(function() {
+                console.error('Error fetching JSON data.');
+            });
+    
+            // Event when search input changes
+            $('#search-input').on('keyup', function() {
+                const searchVal = $(this).val().toLowerCase();
+                $('#main-table tbody tr').each(function() {
+                    const tableName = $(this).children('td:nth-child(1)').text().trim();
+                    if (isValueInTable(tableName, searchVal)) {
+                        $(this).show();
+                    } else {
+                        $(this).hide();
+                    }
+                });
+    
+                if ($('#details-table').is(':visible')) {
+                    const tableName = $('#row-description').text().replace('Table fields for ', '').trim();
+                    displayTableFields(tableName, searchVal);
+                }
+            });
+    
+            // Event when a detail row is clicked
+            $('#details-table').on('click', '.data-row', function() {
+                // Hide all dropdowns first
+                $('.dropdown-content').hide();
+                $('#details-table .data-row').removeClass('selected-row');  // Remove the class from all rows in #details-table
+                $(this).addClass('selected-row');
+                // Toggle the clicked dropdown
+                const dropdownContent = $(this).next('.dropdown-content');
+                dropdownContent.toggle();
+            });
+    
+            function isValueInTable(tableName, searchVal) {
+                const tableFields = jsonData[tableName];
+                for (const fieldName in tableFields) {
+                    const fieldValues = tableFields[fieldName].values;
+                    for (let value of fieldValues) {
+                        if (value.toLowerCase().includes(searchVal)) {
+                            return true;
+                        }
+                    }
+                }
+                return false;
+            }
+    
+            function displayTableFields(tableName, searchVal = '') {
+                const dataRows = jsonData[tableName];
+                if (dataRows) {
+                    // Display the table description
+                    if(dataRows.table_description) {
+                        $('#table-description').show().text(dataRows.table_description);
+                    } else {
+                        $('#table-description').hide();
+                    }
+
+                    let html = '';
+                    for (const fieldName in dataRows) {
+                        // Skip if the key is 'table_description'
+                        if(fieldName === 'table_description') continue;
+
+                        const fieldValue = dataRows[fieldName].values.join(', ');
+                        const dropdownHTML = createDropdownHTML(dataRows[fieldName].values, searchVal);
+                        if (searchVal === '' || fieldValue.toLowerCase().includes(searchVal)) {
+                            html += `
+                                <tr class="data-row">
+                                    <td>${fieldName}</td>
+                                    <td>${dataRows[fieldName].description}</td>
+                                </tr>
+                                <tr class="dropdown-content" style="display: none;">
+                                    <td colspan="2">
+                                        ${dropdownHTML}
+                                    </td>
+                                </tr>
+                            `;
+                        }
+                    }
+                    $('#details-table tbody').html(html);
+                    $('#row-description').show().text('Table fields for ' + tableName);
+                    $('#details-table').show();
+                }
+            }
+
+    
+            function createDropdownHTML(values, searchVal) {
+                if (values.length === 0) return '-';
+
+                let listItems = '';
+
+                values.forEach(value => {
+                    if (value.toLowerCase().includes(searchVal)) {
+                        listItems += `<div class="collapse-item">${value}</div>`;
+                    }
+                });
+
+                let html = `
+                    <div class="card card-body scrollable-dropdown">
+                        ${listItems}
+                    </div>
+                `;
+
+
+                return html;
+            }
+        });
+    </script>
+    
+</body>
+
+</html>

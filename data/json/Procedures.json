@@ -1,0 +1,60 @@
+{
+    "Procedures": {
+        "table_description":"This table is a",
+        "EncounterID": {
+            "description": "A number that uniquely identifies a visit to a healthcare facility.",
+            "data_type": "Text",
+            "values": []
+        },
+        "PatientID": {
+            "description": "An ID associated with a patient. All Patient_IDs have been anonymized.",
+            "data_type": "Text",
+            "values": []
+        },
+        "AttendingCredential": {
+            "description": "The primary credential or medical degree of the attending provider performing a hospital event.",
+            "data_type": "Text",
+            "values": []
+        },
+        "CPTCode": {
+            "description": "Clinical Procedure Terminology. A code defined by the American Medical Association identifying a medical service or procedure. The primary means of identifying services, CPTs are also used to bill outpatients at hospitals.",
+            "data_type": "Text",
+            "values": []
+        },
+        "CPTDesc": {
+            "description": "Cant Find Description / associated field from old data dictionary",
+            "data_type": "Text",
+            "values": []
+        },
+        "CPTType": {
+            "description": "The indication of whether the record is a clinical procedure or a hospital procedure.",
+            "data_type": "Text",
+            "values": []
+        },
+        "LocationType": {
+            "description": "Type of location where the procedure was rendered.",
+            "data_type": "Text",
+            "values": []
+        },
+        "PerformingCredential": {
+            "description": "The primary credential or medical degree of the provider performing a hospital event.",
+            "data_type": "Text",
+            "values": []
+        },
+        "ProcCount": {
+            "description": "Total number of procedures for a given encounter (available for hospital encounters only).",
+            "data_type": "Text",
+            "values": []
+        },
+        "ServiceTimeStamp": {
+            "description": "The day service was rendered at a healthcare facility. Has these purposes: 1. The day of service posted to any billing transaction. 2. The day of a clinical event captured in an eHR. 3. The census day in hospital census reporting. 4. The day a scheduling transaction is logged.",
+            "data_type": "Text",
+            "values": []
+        },
+        "Year": {
+            "description": "Year the service was rendered (shifted up to 365 days to maintain the anonymity of the patient).",
+            "data_type": "Text",
+            "values": []
+        }
+    }
+}

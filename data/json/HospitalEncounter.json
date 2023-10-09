@@ -1,0 +1,135 @@
+{
+    "Hospital Encounter": {
+        "table_description":"The Hospital Encounters table provides a comprehensive view of a patient's journey through a healthcare facility, from admission to discharge. It collates a rich set of data points including the reasons for the visit, the specialists attending, the length of the stay, the eventual discharge disposition, and many other pivotal facets. This table not only elucidates clinical and administrative perspectives but also is instrumental for billing, operations, and quality control.",
+        "EncounterID": {
+            "description": "A number that uniquely identifies a visit to a healthcare facility.",
+            "data_type": "Text",
+            "values": []
+        },
+        "PatientID": {
+            "description": "An ID associated with a patient. All Patient_IDs have been anonymized.",
+            "data_type": "Text",
+            "values": []
+        },
+        "AdmissionSource": {
+            "description": "The source of an admission, such as HMO, referral, transfer, etc. Each hospital assigns admission source values. Although there is general agreement between hospital on the common definitions, values diverge in some cases. Each value is tied to a univeral billing (UB82) value for admission source. The UB codes are consistent across all hosiptals.",
+            "data_type": "Text",
+            "values": []
+        },
+        "AdmissionType": {
+            "description": "The circumstances under which a patient is admitted. Each hospital assigns admission type values. Although there is general agreement between hospital on the common definitions, values diverge in some cases. Each value is tied to a univeral billing (UB82) value for admission type. The UB codes are consistent across all hospitals.",
+            "data_type": "Text",
+            "values": []
+        },
+        "AdmitPrimaryPosition": {
+            "description": "The primary position or job title of the admitting physician.",
+            "data_type": "Text",
+            "values": []
+        },
+        "AdmitTimeStamp": {
+            "description": "Date/time of a patient's arrival to the hospital. Used to compute elapsed time from arrival to a given clinical event.",
+            "data_type": "Text",
+            "values": []
+        },
+        "AdmittingCredential": {
+            "description": "The primary credential or medical degree of an admitting provider.",
+            "data_type": "Text",
+            "values": []
+        },
+        "AdmittingSpecialty": {
+            "description": "The specialty -- as defined by the hospital -- of the admitting physician.",
+            "data_type": "Text",
+            "values": []
+        },
+        "AttendingCredential": {
+            "description": "The credential of the attending physician of a hospital encounter. May also be called \"discharging physician\".",
+            "data_type": "Text",
+            "values": []
+        },
+        "AttendingSpecialty": {
+            "description": "The specialty -- as defined by the hospital -- of the attending physician.",
+            "data_type": "Text",
+            "values": []
+        },
+        "DaysSinceLastDischarge": {
+            "description": "The number of days between this encounter's admit_ts and the same patient's previous enconter's discharge time",
+            "data_type": "Text",
+            "values": []
+        },
+        "DischargeTimeStamp": {
+            "description": "Date/time of a patient's discharge from the hospital.",
+            "data_type": "Text",
+            "values": []
+        },
+        "DishargeDisposition": {
+            "description": "Disposition of the patient at discharge (e.g., left against medical advice, discharged home, expired). Code values are consistent across all hospitals. Each value is tied to a univeral billing (UB82) value for discharge disposition. The UB codes are consistent across all hospitals.",
+            "data_type": "Text",
+            "values": []
+        },
+        "EncounterType": {
+            "description": "A general classification of the nature of the hospital encounter.",
+            "data_type": "Text",
+            "values": []
+        },
+        "HospitalCode": {
+            "description": "The organizational entity admitting the patient.",
+            "data_type": "Text",
+            "values": []
+        },
+        "LengthOfStay_days": {
+            "description": "Length of stay in days (and fraction of days). Calculated from admit_dt to discharge_dt.",
+            "data_type": "Text",
+            "values": []
+        },
+        "LocationType": {
+            "description": "Type of location where the procedure was rendered.",
+            "data_type": "Text",
+            "values": []
+        },
+        "MSDRGCaseMixIndex": {
+            "description": "Total DRG weights divided by the total number of encounters. Can be broken down by Patients, Organizations (Pavilion), Admission/Discharge Dates, Payer (Financial Class) and DRGs.",
+            "data_type": "Text",
+            "values": []
+        },
+        "MSDRGCode": {
+            "description": "Medicare Severity-Diagnosis Related Group, a system of classifying a Medicare patient's hospital stay into various groups in order to facilitate payment of services.",
+            "data_type": "Text",
+            "values": []
+        },
+        "MSDRGDesc": {
+            "description": "",
+            "data_type": "Text",
+            "values": []
+        },
+        "PerformingCredential": {
+            "description": "The primary credential or medical degree of a provider performing a clinical event.",
+            "data_type": "Text",
+            "values": []
+        },
+        "Readmission30": {
+            "description": "An indicator for whether days_since_last_discharge <= 30.",
+            "data_type": "Text",
+            "values": []
+        },
+        "Readmission60": {
+            "description": "An indicator for whether days_since_last_discharge <= 60.",
+            "data_type": "Text",
+            "values": []
+        },
+        "Readmission90": {
+            "description": "An indicator for whether days_since_last_discharge <= 90.",
+            "data_type": "Text",
+            "values": []
+        },
+        "VisitCondition": {
+            "description": "A patient's general clinical condition in a hospital stay.",
+            "data_type": "Text",
+            "values": []
+        },
+        "Year": {
+            "description": "Year the service was rendered (shifted up to 365 days to maintain the anonymity of the patient).",
+            "data_type": "Text",
+            "values": []
+        }
+    }
+}

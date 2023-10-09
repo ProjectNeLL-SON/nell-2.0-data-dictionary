@@ -1,0 +1,70 @@
+{
+    "Susceptibility": {
+        "table_description":"The Micro Susceptibility Labs table is dedicated to capturing essential details related to microbiology susceptibility testing. Such tests are vital in determining the sensitivity or resistance of microorganisms to specific antibiotics. This aids clinicians in prescribing the most effective antibiotic treatment for an infection. The table emphasizes not only the clinical details of the tests and their results but also the contextual details surrounding the patient encounter and specimen collection.",
+        "EncounterID": {
+            "description": "A number that uniquely identifies a visit to a healthcare facility.",
+            "data_type": "Text",
+            "values": []
+        },
+        "PatientID": {
+            "description": "An ID associated with a patient. All Patient_IDs have been anonymized.",
+            "data_type": "Text",
+            "values": []
+        },
+        "Antibiotic": {
+            "description": "The antibiotic drug used in a sensitivity test at a microbiology lab.",
+            "data_type": "Text",
+            "values": []
+        },
+        "AntibioticPanel": {
+            "description": "Predefined set of antibiotics used for a susceptibility test.",
+            "data_type": "Text",
+            "values": []
+        },
+        "Assay": {
+            "description": "Name of the susceptibility test that was run.",
+            "data_type": "Text",
+            "values": []
+        },
+        "MedicalSite": {
+            "description": "A body site or piece of medical equipment from which a specimen is collected",
+            "data_type": "Text",
+            "values": []
+        },
+        "Organism": {
+            "description": "A microorganism that may be detected in a microbiology lab culture. Sample values: E Coli, Staph, Strep",
+            "data_type": "Text",
+            "values": ["E Coli", "Staph", "Strep"]
+        },
+        "ResultSusceptSeq": {
+            "description": "Unique identifier for susceptibility labs. NOTE: Sorting by this field will put all micro susceptibility labs for a particular encounter in sequential order.",
+            "data_type": "Number",
+            "values": []
+        },
+        "ResultVerifyTS": {
+            "description": "Date/time that the result was finalized.",
+            "data_type": "Text",
+            "values": []
+        },
+        "SpecimenCollectTS": {
+            "description": "Date/time that a lab specimen was collected.",
+            "data_type": "Text",
+            "values": []
+        },
+        "SpecimenReceiveTS": {
+            "description": "Date/time that a lab specimen was received.",
+            "data_type": "Text",
+            "values": []
+        },
+        "SusceptInterpretation": {
+            "description": "A high-level description of a given result.",
+            "data_type": "Text",
+            "values": []
+        },
+        "Year": {
+            "description": "Year the service was rendered (shifted up to 365 days to maintain the anonymity of the patient).",
+            "data_type": "Text",
+            "values": []
+        }
+    }
+}
